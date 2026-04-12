@@ -5,7 +5,6 @@ import fastify, {
 } from "fastify";
 import fastifyCors from "fastify-cors";
 import priceRouters from "./routers/price";
-import track from "./plugins/track";
 
 const buildApp = (options: FastifyServerOptions) => {
   const app = fastify(options);
@@ -13,8 +12,6 @@ const buildApp = (options: FastifyServerOptions) => {
   app.register(fastifyCors, {
     origin: "*",
   });
-
-  app.register(track, {});
 
   app.get("/", async (request: FastifyRequest, reply: FastifyReply) => {
     reply.code(200).send({
