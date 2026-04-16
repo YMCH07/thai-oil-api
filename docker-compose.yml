@@ -1,7 +1,7 @@
 services:
   api:
     build: .
-    container_name: thai-oil-api
+    container_name: thai-oil-ptt-api
     ports:
       - "4050:4050"
     restart: always
