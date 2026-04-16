@@ -3,5 +3,5 @@ services:
     build: .
     container_name: thai-oil-api
     ports:
-      - "3000:3000"
+      - "4050:4050"
     restart: always
