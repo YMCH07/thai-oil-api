@@ -1,7 +1,16 @@
+version: "3.8"
+
 services:
   api:
     build: .
     container_name: thai-oil-ptt-api
     ports:
-      - "4050:4050"
+      - "4050"
     restart: always
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    external: true
+    name: app_net
