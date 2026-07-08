@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
-import priceHandler from "../controllers/price";
+import PttOilService from "../controllers/oilservice";
 
 const cache: { data?: any; expiry?: number } = {};
 
@@ -11,7 +11,7 @@ const priceRouters = async (app: FastifyInstance) => {
       return;
     }
 
-    const data = await priceHandler();
+    const data = await PttOilService();
     const response = {
       status: data.status,
       response: data.response,
